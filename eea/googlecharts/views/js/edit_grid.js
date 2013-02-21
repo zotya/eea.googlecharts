@@ -223,6 +223,10 @@ function filterApplyFlags() {
     }
 }
 
+function enableGridFormat(){
+    console.log('Not implemented: enableGridFormat ');
+}
+
 function enableGridFilters(){
     filter_grid_filters = [];
     jQuery("body").delegate("#slick-menu-cancel","click", function(){
@@ -446,7 +450,10 @@ function drawGrid(divId, data, data_colnames, filterable_columns){
                 {title:'Show column',
                  command:'showColumn'},
                 {title:'Hide column',
-                 command:'hideColumn'}
+                 command:'hideColumn'},
+                {title:'Format...',
+                 tooltip: 'Format',
+                 command:'format'}
             ]
         }
     };
@@ -461,6 +468,9 @@ function drawGrid(divId, data, data_colnames, filterable_columns){
                  command:'showColumn'},
                 {title:'Hide column',
                  command:'hideColumn'},
+                {title:'Format...',
+                tooltip: 'Format',
+                 command:'format'},
                 {title:'-filter-',
                  command:'filter',
                  tooltip: 'Filter',
@@ -575,6 +585,7 @@ function drawGrid(divId, data, data_colnames, filterable_columns){
         sortById(grid_sort_columnId, grid_sort_asc);
     }
 
+    enableGridFormat();
     enableGridFilters();
 }
 
